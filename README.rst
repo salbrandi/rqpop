@@ -9,7 +9,7 @@ of a webservice, for example. The jobs are enqueued with RQ (Redis Queue).
 
 JobBlocks:
 ++++++++++
-refer to https://github.com/salbrandi/stressypy for documentation on JobBlock objects
+refer to https://github.com/salbrandi/stressypy#jobblock-attributes for documentation on JobBlock objects
 
 
 Installation
