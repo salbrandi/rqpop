@@ -22,10 +22,10 @@ or the tarfile can be downloaded from the url: https://github.com/salbrandi/rqpo
 and setup with ``python setup.py install``
 
 | In order to run rqpop, you must have a REDIS server running and RQ ``rqworkers`` listening on the default queue:
-
+|
 | Documentation for quickly setting up a REDIS server can be found here: https://redis.io/topics/quickstart
 | Full REDIS documentaiton here: https://redis.io/documentation
-
+|
 | Documentation for RQ (Redis Queue) cna be found here: http://python-rq.org/
 | but for most users a worker can be started, listening on the default queue with simply the ``rqworker`` command.
 
@@ -38,10 +38,10 @@ the default distribution type is a log normal distribution, but the type can be 
 
 Distributions supported are:
 
-| * Log Normal: ``normal``
-| * Box: ``box``
-| * Spike: ``spike``
-| * Linear: ``line``
+- Log Normal: ``normal``
+- Box: ``box``
+- Spike: ``spike``
+- Linear: ``line``
 
 Examples
 --------
