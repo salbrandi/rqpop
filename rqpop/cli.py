@@ -3,7 +3,7 @@
 # Third Party Imports #
 # ------------------- #
 import click
-import stressypy
+from stressypy import *
 
 
 # ------------------- #

@@ -21,11 +21,13 @@ Alternatively, it can be cloned manually from the url: https://github.com/salbra
 or the tarfile can be downloaded from the url: https://github.com/salbrandi/rqpop/archive/0.1.tar.gz
 and setup with ``python setup.py install``
 
-in order to run rqpop, you must have a REDIS server running and RQ ``rqworkers`` listening on the default queue.
-Documentation for quickly setting up a REDIS server can be found here: https://redis.io/topics/quickstart
-Full REDIS documentaiton here: https://redis.io/documentation
-Documentation for RQ (Redis Queue) cna be found here: http://python-rq.org/
-but for most users a worker can be started, listening on the default queue with simply the ``rqworker`` command.
+| In order to run rqpop, you must have a REDIS server running and RQ ``rqworkers`` listening on the default queue:
+
+| Documentation for quickly setting up a REDIS server can be found here: https://redis.io/topics/quickstart
+| Full REDIS documentaiton here: https://redis.io/documentation
+
+| Documentation for RQ (Redis Queue) cna be found here: http://python-rq.org/
+| but for most users a worker can be started, listening on the default queue with simply the ``rqworker`` command.
 
 Directions
 ++++++++++
@@ -35,13 +37,14 @@ The seed for the distribution of job 'sizes' can be specified with ``--seed``.
 the default distribution type is a log normal distribution, but the type can be specified using ``--distribution``.
 
 Distributions supported are:
-* Log Normal: ``normal``
-* Box: ``box``
-* Spike: ``spike``
-* Linear: ``line``
+
+| * Log Normal: ``normal``
+| * Box: ``box``
+| * Spike: ``spike``
+| * Linear: ``line``
 
 Examples
 --------
 * ``rqpop queue 10 --seed 0 --distribution normal`` creates and enqueues 10 jobs normally distributed with seed 0
-* ``rqpop queue 21456 --seed 1023041 --distribution normal`` creates and enqueues 21, 456 jobs linearly distributed with seed 1023041
+* ``rqpop queue 21456 --seed 1023041 --distribution line`` creates and enqueues 21, 456 jobs linearly distributed with seed 1023041
 
