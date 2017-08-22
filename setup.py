@@ -17,12 +17,13 @@ setup(
     py_modules=['cpustresser'],
     description='A package to enqueue a variable number of jobs with variably distributed TIME x CPU "areas"',
     long_description=long_description,
-    install_requires='''
-                     click, 
-                     stressypy, 
-                     scipy, 
-                     rq
-                     ''',
+    install_requires=[
+                     'click',
+                     'stressypy',
+                     'scipy',
+                     'rq',
+                     'redis'
+                     ],
     entry_points='''
         [console_scripts]
         rqpop=rqpop.cli:rqpop

@@ -32,19 +32,24 @@ and setup with ``python setup.py install``
 Directions
 ++++++++++
 
-``rqpop`` runs using the command ``rqpop queue`` with the number of jobs desired being passed as arguments.
-The seed for the distribution of job 'sizes' can be specified with ``--seed``.
-the default distribution type is a log normal distribution, but the type can be specified using ``--distribution``.
+``rqpop`` runs using the command ``rqpop queue`` with the number of jobs desired and the max time allowed being passed as arguments.
+The seed for the distribution of job 'sizes' can be specified with ``--seed``, the minimum and maximum cpu with ``--mnc`` and ``--mxc``
+respectively, the minimum time with ``--mnt`` and the queue with ``--q``.
+The default distribution type is a log normal distribution, but the type can be specified using ``--distribution``.
 
 Distributions supported are:
 
-- Log Normal: ``normal``
+- Log Normal: ``normal`` - default
 - Box: ``box``
-- Spike: ``spike``
-- Linear: ``line``
+- Spike/Dirac/Delta: ``spike``
+- Exponential/Power: ``power``
 
 Examples
 --------
-* ``rqpop queue 10 --seed 0 --distribution normal`` creates and enqueues 10 jobs normally distributed with seed 0
-* ``rqpop queue 21456 --seed 1023041 --distribution line`` creates and enqueues 21, 456 jobs linearly distributed with seed 1023041
+* ``rqpop queue 10 12 --seed 0 --distribution normal``:
+    creates and enqueues 10 jobs normally distributed with seed 0 and a max time of 12 seconds
+
+
+* ``rqpop queue 21456 --seed 1023041 --distribution power --mnc 2 --mxc 10 -q high``:
+    creates and enqueues 21, 456 jobs exponentially distributed with seed 1023041, min cores 2, max cores 10 on the queue 'high
 
