@@ -19,6 +19,7 @@ from scipy import random as rdm
 JobBlock = cpustresser.JobBlock
 
 
+
 class BlockBox:
     """# A class designed to hold the JobBlocks
     this allows multiple job creating sessions to be done concurrently and each saved to
@@ -64,6 +65,8 @@ def generate_test_job_box(job_count,
     :return: box holding block objects which hold the functions and their relevant specifications
     """
 
+
+
     rdm.seed(seed=seed)
     random_cpu_list = []
     random_time_list = []
@@ -71,7 +74,6 @@ def generate_test_job_box(job_count,
     cpudev = mean_cpu-min_cpu/4
     mean_time = (max_time - min_time) / 2
     timedev = mean_time - min_time / 4
-
     # use the appropriate scipy function for the appropriate case
     if distribution == 'normal':  # Gaussian
         random_cpu_list = rdm.normal(mean_cpu, cpudev, job_count)
@@ -86,6 +88,8 @@ def generate_test_job_box(job_count,
         random_cpu_list = rdm.uniform(min_cpu, max_cpu, job_count)
         random_time_list = rdm.uniform(min_time, max_time, job_count)
         pass
+
+    estimate_uncertainty_time = [rdm.normal(0, num/10, None) for num in random_time_list]
 
     # cap the outer limits of the random numbers so they dont give negative time or more cpu cores than
     # possible/ more than max time

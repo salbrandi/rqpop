@@ -33,9 +33,23 @@ Directions
 ++++++++++
 
 ``rqpop`` runs using the command ``rqpop queue`` with the number of jobs desired and the max time allowed being passed as arguments.
-The seed for the distribution of job 'sizes' can be specified with ``--seed``, the minimum and maximum cpu with ``--mnc`` and ``--mxc``
-respectively, the minimum time with ``--mnt`` and the queue with ``--q``.
-The default distribution type is a log normal distribution, but the type can be specified using ``--distribution``.
+
+The help page:
+
+|Usage: rqpop queue [OPTIONS] NUM_JOBS MAX_TIME
+|
+|Options:
+|  --seed TEXT    The seed to be internalized for the number distribution
+|  --dist TEXT    the distirbution to be used for psuedo-random generation
+|  --mnc INTEGER  the minimum number of cpus to be used, default 1
+|  --mxc INTEGER  maximum number of cores a job should be able to require,
+|                 default: maximum configured cores
+|  --mnt INTEGER  minimum amount of time the jobs should run for, default 1
+|  --q TEXT       the queue that the jobs should be enqueued to, default:
+|                 "default"
+|  --help         Show this message and exit.
+
+
 
 Distributions supported are:
 
