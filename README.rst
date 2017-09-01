@@ -17,10 +17,6 @@ Installation
 
 ``rqpop`` can be installed with ``pip install rqpop`` and will auto-install all dependencies.
 
-Alternatively, it can be cloned manually from the url: https://github.com/salbrandi/rqpop.git
-or the tarfile can be downloaded from the url: https://github.com/salbrandi/rqpop/archive/0.1.tar.gz
-and setup with ``python setup.py install``
-
 | In order to run rqpop, you must have a REDIS server running and RQ ``rqworkers`` listening on the default queue:
 |
 | Documentation for quickly setting up a REDIS server can be found here: https://redis.io/topics/quickstart
